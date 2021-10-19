@@ -1,0 +1,70 @@
+ul{
+    text-align: left;
+    margin-left: 10px;
+}
+
+p, li { /*dos selectores diferentes con las mismas propiedades CSS*/
+    font-size: 20px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 64px;
+}
+
+h2 {
+    font-weight: 900;
+}
+#main h2{ /*propiedades CSS que se aplican a todos los elementos h2 contenidos en el elemento con el id main*/
+    text-transform: uppercase; /*Mayuscula sostenida*/
+    color: #60be86;
+    font-size: 44px;
+}
+
+h3 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+#sidebar-left{
+    float: left;
+    width: 25%;
+    background-color: #60be86;
+    text-align: center;
+    padding: 30px;
+}
+#sidebar-left #avatar{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+
+#main{
+    float:left;
+    margin-left: 32%; /*Como asignamos un 25% de ancho a la barra de la izquierda, el contenido de la derecha empieza desplazado 25% más 7% de espacio*/
+    width:68%;/*Si el ancho es el 100% pero sacamos 32% de margen, el ancho final debe ser de 68%*/
+    background-color: white;
+}
+
+#footer{
+    clear:both;
+    padding: 15px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+#sidebar-left, #main, #sidebar-right{
+    height: 100%				
+}
+
+.elemento-fijo {
+    position: fixed;
+    min-height: 120px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.tech { /*identificador común, se tienen varios elementos con esta clase*/
+    height: 100px;
+    margin-right: 40px;
+}
