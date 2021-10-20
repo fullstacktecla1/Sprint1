@@ -1,0 +1,42 @@
+.center{
+    text-align: center;
+}
+
+
+#loquesea{
+    color: blue;
+}
+
+.center img{
+    max-width: 200px;
+}
+
+div.center span{
+    display: block;
+}
+
+#footer img{
+    max-width: 80px;
+    border-radius: 50%;
+    margin: 0px 5px;
+}
+
+#footer{
+    margin: 30px 10px 5px;
+}
+
+#main h2{
+    text-transform: uppercase;
+}
+
+.titulo, h2{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p, span{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1.titulo{
+    font-family: 'Festive', cursive;
+}
