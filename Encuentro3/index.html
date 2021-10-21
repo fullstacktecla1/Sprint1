@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Musical</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <h1 class="center titulo">Tecla Music Festival - 2021</h1>
+        <h3 class="center">25 al 28 de noviembre 2021 - Foro Sol - Ciudad de México</h3>
+    </div>
+    <div id="main">
+        <div id="banner">
+            <img src="./img/banner.png" alt="Tecla Music Festival">
+        </div>
+        <div>
+            <h2 class="verde">jueves</h2>
+            <p>Caifanes <span class="verde">|</span> Cafe Tacuba <span class="verde">|</span> Santana <span class="verde">|</span> El Tri <span class="verde">|</span> Molotov <span class="verde">|</span> Zoé</p>
+            <h2 class="azul">viernes</h2>
+            <p>Rodrigo y Gabriela <span class="azul">|</span> Brujería <span class="azul">|</span> Hocico <span class="azul">|</span> Botellita de Jerez</p>
+            <h2 class="rojo">sabado</h2>
+            <p>Cuca <span class="rojo">|</span> Panda <span class="rojo">|</span> Panteón Rococó <span class="rojo">|</span> Control Machete</p>
+            <h2 class="naranja">domingo</h2>
+            <p>Tijuana No! <span class="naranja">|</span> Hello Seahorse <span class="naranja">|</span> Ritmo Peligroso <span class="naranja">|</span> El Personal</p>
+        </div>
+    </div>
+    <div id="lateral">
+        <div id="img-lateral" class="center">
+            <img src="./img/tickets.jpg" alt="Ticket">
+        </div>
+        <form action="#" method="get">
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id">
+            <label for="ticket">Seleccione el tipo de Ticket</label>
+            <select name="ticket" id="ticket">
+                <option value="1">1 dia | Vip | $400</option>
+                <option value="2">1 dia | General |$200</option>
+                <option value="3">1 Día | Platinum | $600</option>
+                <option value="4">1 día | General |$200</option>
+                <option value="5">4 días | Vip | $1200</option>
+                <option value="6">4 días | General | $600</option>
+                <option value="7">4 días | Patinum | $1800</option>
+            </select>
+            <!--<button>Comprar</button>-->
+            <input type="submit" value="Comprar">
+        </form>
+        <div class="center">
+            <span>1 dia | Vip | $400</span>
+            <span>1 dia | General |$200</span>
+            <span>1 Día | Platinum | $600</span>
+            <span>1 día | General |$200</span>
+            <span>4 días | Vip | $1200</span>
+            <span>4 días | General | $600</span>
+            <span>4 días | Patinum | $1800</span>
+        </div>
+    </div>
+    <div id="footer" class="center">
+        <img src="./img/rec1.png" alt="">
+        <img src="./img/rec2.png" alt="">
+        <img src="./img/rec3.png" alt="">
+        <img src="./img/rec4.png" alt="">
+        <img src="./img/rec5.png" alt="">
+    </div>
+</body>
+</html>

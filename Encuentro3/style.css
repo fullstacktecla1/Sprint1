@@ -1,0 +1,128 @@
+/*### ESTILOS GENERALES ###*/
+*{
+    /*border: 1px solid #000;*/
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.center{
+    text-align: center;
+    align-items: center;
+}
+/*.center{
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}*/
+p, span{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.rojo{
+    color: red;
+}
+.verde{
+    color: green;
+}
+.azul{
+    color: blue;
+}
+.naranja{
+    color: orange;
+}
+
+/*### ESTILOS DEL HEADER ###*/
+#header{
+    background: linear-gradient(to right, red, orange, yellow, green, blue);;
+}
+h1.titulo{
+    font-family: 'Festive', cursive;
+}
+
+.titulo, h2{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+div.center span{
+    display: block;
+}
+
+/*### ESTILOS DEL MAIN ###*/
+#main{
+    width: 75%;
+    float: left;
+    overflow: hidden;
+    padding: 10px 50px 0;
+
+}
+#main img{
+    max-width: 100%;
+}
+#main h2{
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+/*### ESTILOS DE LATERAL ###*/
+#lateral{
+    width: 25%;
+    float: right;
+}
+form{
+    background-color: lightskyblue;
+    padding: 20px 10px;
+}
+form input, form select{
+    display: block;
+    margin: 5px 0;
+}
+#nombre{
+    width: 250px;
+}
+input[type="submit"]{/*Selector con atributo*/
+    padding: 5px;
+    width: 120px;
+    cursor: pointer;
+}
+#img-lateral{
+    background-color: #d3d3d3;
+    padding: 25px;
+}
+#img-lateral img{
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+#lateral > .center:last-child{ /* el simbolo > indica que el elemento de la derecha es hijo directo del elemento de la izquiera*/
+    background-color: #d3d3d3;
+    padding: 25px;
+}
+#lateral > .center:last-child span{
+    width: 280px;
+    height: 30px;
+    border-radius: 10px;
+    border-bottom: solid 2px black;
+    background-color: orange;
+    margin-top: 5px;
+    padding-top: 5px;
+    color: lightslategray;
+    font-weight: 500;
+}
+/*### ESTILOS DEL FOOTER ###*/
+#footer{
+    clear: both;
+    background-color: grey;
+    padding: 25px 0;
+}
+#footer img{
+    max-width: 80px;
+    border-radius: 50%;
+    margin: 0px 5px;
+}
+
+
+/*#nombre:hover{
+border: 5px solid red;
+}*/
