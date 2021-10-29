@@ -1,0 +1,92 @@
+[33mcommit 452be3a3fd5fb35490e90aeee6f1dc88b4947dcc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: fullstacktecla1 <fullstacktecla1@gmail.com>
+Date:   Thu Oct 28 23:52:37 2021 -0500
+
+    Ejercicio practico encuentro 9
+
+[1mdiff --git a/Encuentro9/index.html b/Encuentro9/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d63065a[m
+[1m--- /dev/null[m
+[1m+++ b/Encuentro9/index.html[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta http-equiv="X-UA-Compatible" content="IE=edge">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Arreglos</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <h1>Presiona F12</h1>[m
+[32m+[m[32m    <script src="index.js"></script>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/Encuentro9/index.js b/Encuentro9/index.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..550044e[m
+[1m--- /dev/null[m
+[1m+++ b/Encuentro9/index.js[m
+[36m@@ -0,0 +1,59 @@[m
+[32m+[m[32mlet genero=prompt("Ingresa un genero (Hombre H - Mujer M)");//X[m
+[32m+[m[32mlet articulosMujeres=["ClavinKleyn",500,true,"MAC",400,true];[m
+[32m+[m[32mlet articulosHombres=["GAP", 700, true,"DC",500,true];[m
+[32m+[m
+[32m+[m[32m// && verdadero si los dos son verdaderos[m
+[32m+[m[32m// || falso si los dos son falsos[m
+[32m+[m
+[32m+[m
+[32m+[m[32mwhile((genero!="H") && (genero!="M")){[m[41m [m
+[32m+[m[32m    genero=prompt("Upps hay un error, Ingresa un genero (Hombre H - Mujer M)");[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mif(genero==="M"){[m
+[32m+[m[32m    // Bloque para Mujer[m
+[32m+[m[32m    let articulo=prompt("Ingrese un nombre de articulo de mujer");[m
+[32m+[m[32m    switch(articulo.toLowerCase()){[m
+[32m+[m[32m        case "bolsa":[m
+[32m+[m[32m            if(articulosMujeres[2]){[m
+[32m+[m[32m                alert(`Disponemos de bolsas ${articulosMujeres[0]} con un precio de $${articulosMujeres[1]}`);[m
+[32m+[m[32m            }else{[m
+[32m+[m[32m                alert(`NO disponemos de bolsas ${articulosMujeres[0]} con un precio de $${articulosMujeres[1]}`);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        break;[m
+[32m+[m[32m        case "labial":[m
+[32m+[m[32m            let disponible = articulosMujeres[5]?'D':'No d';[m
+[32m+[m[32m            alert(`${disponible}isponemos de labial ${articulosMujeres[3]} con un precio de $${articulosMujeres[4]}`);[m
+[32m+[m[32m        break;[m
+[32m+[m[32m        default:[m
+[32m+[m[32m            alert("No disponemos del artículo "+articulo);[m
+[32m+[m[32m        break;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}else{[m
+[32m+[m[32m    // Bloque para Hombre[m
+[32m+[m[32m    // Bloque para Mujer[m
+[32m+[m[32m    let articulo=prompt("Ingrese un nombre de articulo de hombre");[m
+[32m+[m[32m    switch(articulo.toLowerCase()){[m
+[32m+[m[32m        case "chamarra":[m
+[32m+[m[32m            if(articulosHombres[2]){[m
+[32m+[m[32m                alert(`Disponemos de chamarra ${articulosHombres[0]} con un precio de $${articulosHombres[1]}`);[m
+[32m+[m[32m            }else{[m
+[32m+[m[32m                alert(`NO disponemos de chamarra ${articulosHombres[0]} con un precio de $${articulosHombres[1]}`);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        break;[m
+[32m+[m[32m        case "tenis":[m
+[32m+[m[32m            let disponible = articulosHombres[5]?'D':'No d';[m
+[32m+[m[32m            alert(`${disponible}isponemos de tenis ${articulosHombres[3]} con un precio de $${articulosHombres[4]}`);[m
+[32m+[m[32m        break;[m
+[32m+[m[32m        default:[m
+[32m+[m[32m            alert("No disponemos del artículo "+articulo);[m
+[32m+[m[32m        break;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfor (let i = 0; i < articulosHombres.length; i++) {[m
+[32m+[m[32m    console.log(articulosHombres[i]);[m
+[32m+[m[32m}[m
+[32m+[m[32marticulosMujeres.forEach(element => {[m
+[32m+[m[32m    console.log(element);[m
+[32m+[m[32m});[m
+\ No newline at end of file[m
