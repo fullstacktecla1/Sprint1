@@ -50,7 +50,13 @@ function imprimirLog(data){
 promesa.then(respuestaCorrecta).catch(respuestaIncorrecta);
 
 async function primera(){
-    let resultado = await promesa;
+    try{
+        let resultado = await promesa;
+        console.log(`Este es el resultado de la promesa sincrona ${resultado}`);
+    }catch(err){
+        console.log(`Este es el resultado con error de la promesa sincrona ${err}`);
+
+    }
     imprimirLog("Esto se imprimio antes que la promesa");    
 }
 primera();//ejecucion de la promesa
