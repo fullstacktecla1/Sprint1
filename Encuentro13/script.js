@@ -53,4 +53,4 @@ async function primera(){
     let resultado = await promesa;
     imprimirLog("Esto se imprimio antes que la promesa");    
 }
-primera();
+primera();//ejecucion de la promesa
