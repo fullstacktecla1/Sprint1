@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded());
+
 app.listen(process.env.PUERTO,()=>{console.log('Servidor de Node con Express iniciado la ruta '+process.env.HOST+":"+process.env.PUERTO);});
 
 const router_home=require('./app/home');
