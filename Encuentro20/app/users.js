@@ -32,6 +32,24 @@ router.put('/newuser',validardatos,(req,res)=>{
     })
 });
 
+router.delete('/delete/:id',(req,res)=>{
+    if(req.params.id==''){
+        res.status(401).json({
+            msg:"Datos invalidos"
+        }); 
+    }else{
+        let index;
+        users.forEach((elem,i) => {
+            if(elem.id===req.params.id)
+                index=i;
+        });
+        users.splice(index,1);
+        res.status(200).json({
+            msg:`Usuario ${req.params.id} eliminado`
+        });
+    }
+});
+
 function validardatos(req,res,next){
     console.log(req.body);
     if(req.body.api_key==undefined){
