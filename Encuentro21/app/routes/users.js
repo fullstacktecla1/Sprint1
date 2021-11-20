@@ -1,9 +1,9 @@
-const { throws } = require('assert');
 const express=require('express');
 const router = express.Router();
 const hash = require('object-hash');
 const {conexion, errorMySQL} = require('../db/conexion');
 
+//Seleccionar todos los usuarios
 router.get('/users',(req,res)=>{
     let sql = `SELECT * FROM users;`;
     conexion.query(sql, function (error, results, fields) {
@@ -11,12 +11,15 @@ router.get('/users',(req,res)=>{
     });
 });
 
+// Seleccionar un usuario por id
 router.post('/user',validardatos,(req,res)=>{
     let sql=`SELECT * FROM users WHERE id='${req.body.id}';`;
     conexion.query(sql, function (error, results, fields) {
         response("Usuario existente", results, error, res);
     });
 });
+
+// Actualizar un usuario existente
 router.put('/user',validardatos,(req,res)=>{
     let {id, name, birth} = req.body;
     let sql=`UPDATE users SET name='${name}', birth='${birth}' WHERE id='${id}';`;
@@ -24,6 +27,8 @@ router.put('/user',validardatos,(req,res)=>{
         response("Usuario actualizado exitosamente", results, error, res);
     });
 });
+
+// Insertar un usuario nuevo 
 router.post('/add',validardatos,(req,res)=>{
     let {name, birth} = req.body;
     let id=hash(name);
@@ -33,6 +38,7 @@ router.post('/add',validardatos,(req,res)=>{
     });
 });
 
+// Eliminar un usuario
 router.delete('/delete/:id',(req,res)=>{
     if(req.params.id==''){
         res.status(401).json({
@@ -48,6 +54,7 @@ router.delete('/delete/:id',(req,res)=>{
     }
 });
 
+//Middleware para validación básica de parametros
 function validardatos(req,res,next){
     console.log(req.body);
     if(req.body.api_key==undefined){
@@ -58,6 +65,7 @@ function validardatos(req,res,next){
         next();
 }
 
+//Funcion generica para manejo de error o respuesta existosa
 function response(msg, data, err, res){
     if (err)
         errorMySQL(err,res);
