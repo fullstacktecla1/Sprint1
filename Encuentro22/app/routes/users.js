@@ -11,7 +11,7 @@ router.get('/users',(req,res)=>{
         response("todos los usuarios usuarios", respuesta,false,res);
     })
     .catch(respuesta=>{
-        response("Error en la consulta", respuesta,true,res);
+        response("Error en la consulta", null, respuesta,res);
     });
 });
 
@@ -25,7 +25,7 @@ router.post('/user',validardatos,(req,res)=>{
             response("Usuario existente", respuesta,false,res);
         }
     ).catch(respuesta=>{
-        response("Error en la consulta", respuesta,true,res);
+        response("Error en la consulta", null, respuesta,res);
     });
 });
 
@@ -33,8 +33,13 @@ router.post('/user',validardatos,(req,res)=>{
 router.put('/user',validardatos,(req,res)=>{
     let {id, name, birth} = req.body;
     let sql=`UPDATE users SET name='${name}', birth='${birth}' WHERE id='${id}';`;
-    seq.query(sql, function (error, results, fields) {
-        response("Usuario actualizado exitosamente", results, error, res);
+    seq.query(sql, { type: seq.QueryTypes.SELECT })
+    .then(
+        (respuesta)=>{
+            response("Usuario actualizado exitosamente", respuesta,false,res);
+        }
+    ).catch(respuesta=>{
+        response("Error en la consulta", null, respuesta,res);
     });
 });
 
@@ -43,8 +48,13 @@ router.post('/add',validardatos,(req,res)=>{
     let {name, birth} = req.body;
     let id=hash(name);
     let sql=`INSERT INTO users VALUES('${id}','${name}', '${birth}');`;
-    seq.query(sql, function (error, results, fields) {
-        response("Usuario agregado exitosamente", id, error, res);
+    seq.query(sql, { type: seq.QueryTypes.SELECT })
+    .then(
+        (respuesta)=>{
+            response("Usuario agregado exitosamente", respuesta,false,res);
+        }
+    ).catch(respuesta=>{
+        response("Error en la consulta", null, respuesta,res);
     });
 });
 
@@ -63,17 +73,12 @@ router.delete('/delete/:id',(req,res)=>{
             response(`Usuario ${req.params.id} ${existe}`, respuesta, false, res);
         })
         .catch(respuesta=>{
-            console.log("Ingreso al catch", respuesta.parent.SqlError);
-            response(`Usuario ${req.params.id}`, respuesta.text, true, res);
+            console.log("Ingreso al catch", respuesta.name);
+            response(`Usuario ${req.params.id}`, null, respuesta, res);
         });
     }
 });
 
-
-// function (error, results, fields) {
-//     let existe=(results!=undefined&&results.affectedRows==0)?'No existe':'eliminado';
-//     response(`Usuario ${req.params.id} ${existe}`, results, error, res);
-// }
 //Middleware para validación básica de parametros
 function validardatos(req,res,next){
     console.log(req.body);
