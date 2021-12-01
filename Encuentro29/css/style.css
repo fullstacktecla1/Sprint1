@@ -1,0 +1,105 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FEFDFF;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Creación de extensión para botones*/
+form .ctn-btn button {
+  border-radius: 5px;
+  width: 80px;
+  height: 35px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/*anidamiento*/
+form {
+  background: #5df1f1;
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ACC6D6;
+}
+
+form input, form textarea {
+  border-radius: 5px;
+  border: 1px solid #ACC6D6;
+  width: 100%;
+  padding: 10px;
+  display: block;
+}
+
+form input:focus, form textarea:focus {
+  border: 1px dashed #8EB1C7;
+}
+
+form textarea {
+  /*Extensión de estilo de un elemento particular*/
+  resize: none;
+}
+
+form label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+form .ctn-btn {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+form .ctn-btn button:first-child {
+  background-color: #5df1f1;
+  margin-right: 20px;
+}
+
+form .ctn-btn button:first-child:hover {
+  background-color: #40b3fa;
+}
+
+form .ctn-btn button:last-child {
+  background-color: #40b3fa;
+}
+
+form .ctn-btn button:last-child:hover {
+  background-color: #5df1f1;
+}
+
+form .ctn-btn button:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  body {
+    background-color: #5df1f1;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: #40b3fa;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    background-color: #5df1f1;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-color: #FEFDFF;
+  }
+}
+/*# sourceMappingURL=style.css.map */
